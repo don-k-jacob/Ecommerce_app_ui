@@ -1,3 +1,4 @@
+import 'package:ecommerceappui/screens/Login.dart';
 import 'package:flutter/material.dart';
 import 'package:ecommerceappui/const.dart';
 class SignUP extends StatefulWidget {
@@ -91,7 +92,10 @@ class _SignUPState extends State<SignUP> {
             ),
             GestureDetector(
               onTap: (){
-
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => LogIn()),
+                );
               },
               child: Container(
                 child: Row(
@@ -126,13 +130,32 @@ class _SignUPState extends State<SignUP> {
             Text("Or sign up with social account",
             style: textStyle.copyWith(fontWeight: FontWeight.normal),),
             SizedBox(
-              height: 12,
+              height: 24,
             ),
             Row(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
                 Container(
-                  
-                )
+                  width: 92,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(24),
+                    color: Colors.white,
+                  ),
+                  height: 64,
+                  child: Image.network("https://image.flaticon.com/teams/slug/google.jpg",scale: 5,),
+                ),
+                SizedBox(
+                  width: 16,
+                ),
+                Container(
+                  width: 92,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(24),
+                    color: Colors.white,
+                  ),
+                  height: 64,
+                  child: Image.network("https://cdn.iconscout.com/icon/free/png-256/facebook-224-498412.png",scale: 5,),
+                ),
               ],
             )
 
