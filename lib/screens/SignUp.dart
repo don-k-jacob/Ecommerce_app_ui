@@ -7,6 +7,7 @@ class SignUP extends StatefulWidget {
 }
 
 class _SignUPState extends State<SignUP> {
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
