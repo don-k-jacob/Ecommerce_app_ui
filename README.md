@@ -1,15 +1,16 @@
-# ecommerceappui
+# E-commerce Application by Fively / Dark version Ui Flutter
 
-A new Flutter application.
 
 ## Getting Started
 
 This project is a starting point for a Flutter application.
 
 A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+- [Cookbook: ](https://flutter.dev/docs/cookbook)
+- [Ui_Design_Link:](https://www.figma.com/file/FSxWhaUljvooU6BoXNL3Ry/E-commerce-Application-by-Fively-Dark-version-Copy?node-id=28%3A9)
+- [firebase: ](https://console.firebase.google.com/)
+- [firebase_auth plugin: ](https://pub.dev/packages/firebase_auth)
+- [Cloud Firestore Plugin for Flutter: ](https://pub.dev/packages/cloud_firestore)
 
 For help getting started with Flutter, view our
 [online documentation](https://flutter.dev/docs), which offers tutorials,
