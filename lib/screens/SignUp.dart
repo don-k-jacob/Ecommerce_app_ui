@@ -1,3 +1,4 @@
+import 'package:ecommerceappui/screens/Home/HomeScreen.dart';
 import 'package:ecommerceappui/screens/Login.dart';
 import 'package:flutter/material.dart';
 import 'package:ecommerceappui/const.dart';
@@ -113,16 +114,24 @@ class _SignUPState extends State<SignUP> {
             SizedBox(
               height: 28,
             ),
-            Container(
-              width: MediaQuery.of(context).size.width,
-              height: 50,
-              decoration: BoxDecoration(
-                  color: Color(0xffEF3651),
-                  borderRadius: BorderRadius.circular(25)
-              ),
-              child: Center(
-                child: Text("Sign Up",
-                style: textStyle),
+            GestureDetector(
+              onTap: (){
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => HomeScreen()),
+                );
+              },
+              child: Container(
+                width: MediaQuery.of(context).size.width,
+                height: 50,
+                decoration: BoxDecoration(
+                    color: Color(0xffEF3651),
+                    borderRadius: BorderRadius.circular(25)
+                ),
+                child: Center(
+                  child: Text("Sign Up",
+                  style: textStyle),
+                ),
               ),
             ),
             SizedBox(
