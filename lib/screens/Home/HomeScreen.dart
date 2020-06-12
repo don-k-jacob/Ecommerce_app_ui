@@ -1,81 +1,8 @@
 import 'package:ecommerceappui/const.dart';
 import 'package:flutter/material.dart';
 
-class HomeScreen extends StatefulWidget {
-  @override
-  _HomeScreenState createState() => _HomeScreenState();
-}
-int _index=0;
-class _HomeScreenState extends State<HomeScreen> {
-  void changeIndex(int index){
-    setState(() {
-      _index=index;
-    });
-  }
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      bottomNavigationBar: Padding(
-        padding: EdgeInsets.symmetric(
-          horizontal: 26,
-          vertical: 32
-        ),
-        child: Container(
-          width: MediaQuery.of(context).size.width,
-
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: <Widget>[
-              IconButton(icon: Icon(Icons.home),color: (_index==0)?Colors.red:Colors.grey,iconSize: 36,onPressed: (){
-                changeIndex(0);
-              },),
-              IconButton(icon: Icon(Icons.shopping_cart),color: (_index==1)?Colors.red:Colors.grey,iconSize: 36,onPressed: (){
-                changeIndex(1);
-              },),
-              IconButton(icon: Icon(Icons.shopping_basket),color: (_index==2)?Colors.red:Colors.grey,iconSize: 36,onPressed: (){
-                changeIndex(2);
-              },),
-              IconButton(icon: Icon(Icons.favorite),color: (_index==3)?Colors.red:Colors.grey,iconSize: 36,onPressed: (){
-                changeIndex(3);
-              },),
-              IconButton(icon: Icon(Icons.person),color: (_index==4)?Colors.red:Colors.grey,iconSize: 36,onPressed: (){
-                changeIndex(4);
-              },),
-            ],
-          ),
-        ),
-      ),
-      backgroundColor: Color(0xff1E1F28),
-      body: pages[_index],
-    );
-  }
-}
-List<Widget> pages=[
-  pg1(),
-  Container(
-    child: Center(
-      child: Text("cart"),
-    ),
-  ),
-  Container(
-    child: Center(
-      child: Text("shop"),
-    ),
-  ),
-  Container(
-    child: Center(
-      child: Text("fav"),
-    ),
-  ),
-  Container(
-    child: Center(
-      child: Text("profile"),
-    ),
-  ),
-
-];
-class pg1 extends StatelessWidget {
-  const pg1({
+class Home extends StatelessWidget {
+  const Home({
     Key key,
   }) : super(key: key);
 
@@ -91,8 +18,7 @@ class pg1 extends StatelessWidget {
                 height: 636,
                 decoration: BoxDecoration(
                     image: DecorationImage(
-                        image: NetworkImage(
-                            "https://s3-alpha-sig.figma.com/img/bdae/c275/d9524ae3df45c58564ace1ab848ba7be?Expires=1591574400&Signature=UARsH~IYVov4riNWoBQJE54uKyNeVMVVZlUb35EFVYNsNYriBJGwG4E4-ICOpeTbpLRytvG~9-wzKu4F9lJ~FClEXKJ51LSw~mKM91sRQ7LJjln1UcDLCeK4BZ5P3dRvStMITuMoPuPj0Ty3MqesoS2ecPV0rdkQbUMVqx2oTDBidybxIidEkq4gnSjPGGVh1OLrLVYWVtlEXwAnJzQjKC9bLPnvgijYuAR~vZqZg5clb6UmKWtpBtl268T-IETPuCaTODKXOMRPsqkgeyjo4UQLPMcIRaL9YDVOCDbpMi5h5pIGe8S1XRjTlWBoT~fZ9Amtr9IiaCHsfpfVLVho9w__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA"),
+                        image: NetworkImage("shorturl.at/mwyM4"),
                         fit: BoxFit.fitHeight)),
               ),
               Container(
@@ -136,17 +62,17 @@ class pg1 extends StatelessWidget {
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 14),
             child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-              Text(
-                "New",
-                style: textStyle.copyWith(fontSize: 34),
-              ),
-              Text(
-                "View all",
-                style: textStyle.copyWith(fontSize: 11),
-              ),
-            ]),
+                  Text(
+                    "New",
+                    style: textStyle.copyWith(fontSize: 34),
+                  ),
+                  Text(
+                    "View all",
+                    style: textStyle.copyWith(fontSize: 11),
+                  ),
+                ]),
           )
         ],
       ),

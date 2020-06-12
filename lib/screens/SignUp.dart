@@ -1,4 +1,4 @@
-import 'package:ecommerceappui/screens/Home/HomeScreen.dart';
+import 'package:ecommerceappui/screens/mainScreen.dart';
 import 'package:ecommerceappui/screens/Login.dart';
 import 'package:flutter/material.dart';
 import 'package:ecommerceappui/const.dart';
@@ -94,7 +94,7 @@ class _SignUPState extends State<SignUP> {
             ),
             GestureDetector(
               onTap: (){
-                Navigator.push(
+                Navigator.pushReplacement(
                   context,
                   MaterialPageRoute(builder: (context) => LogIn()),
                 );
