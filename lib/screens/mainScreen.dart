@@ -63,12 +63,13 @@ List<Widget> pages=[
       child: Text("shop"),
     ),
   ),
+  Profile(),
   Container(
     child: Center(
       child: Text("fav"),
     ),
   ),
-  Profile(),
+
 
 ];
 
