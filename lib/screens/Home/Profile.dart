@@ -44,11 +44,15 @@ class Profile extends StatelessWidget {
                   SizedBox(
                     width: 18,
                   ),
-                  ListTile(
-                    title: Text("My orders"),
-                    subtitle: Text("Already have 12 orders"),
-                    leading: IconButton(icon: Icon(Icons.arrow_forward_ios), onPressed: null),
-                  )
+//                  ListTile(
+//                    title: Text("My orders"),
+//                    subtitle: Text("Already have 12 orders"),
+//                    leading: IconButton(
+//                        icon: Icon(
+//                        Icons.arrow_forward_ios,
+//                                   ),
+//                    onPressed: null),
+//                  )
                 ],
               )
             ],
