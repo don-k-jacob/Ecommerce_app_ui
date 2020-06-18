@@ -1,4 +1,3 @@
-import 'package:ecommerceappui/const.dart';
 import 'package:ecommerceappui/screens/Home/HomeScreen.dart';
 import 'package:ecommerceappui/screens/Home/Profile.dart';
 import 'package:flutter/material.dart';
