@@ -1,5 +1,6 @@
 import 'package:ecommerceappui/Services/Auth.dart';
 import 'package:ecommerceappui/const.dart';
+import 'package:ecommerceappui/screens/Login.dart';
 import 'package:flutter/material.dart';
 
 class Fpass extends StatefulWidget {
@@ -14,7 +15,7 @@ class _FpassState extends State<Fpass> {
   @override
   Widget build(BuildContext context) {
     String email='';
-
+    String error='';
     return Scaffold(
       backgroundColor: Color(0xff1E1F28),
       body: SafeArea(
@@ -82,14 +83,29 @@ class _FpassState extends State<Fpass> {
                   SizedBox(
                     height: 28,
                   ),
-                  Container(
-                    width: MediaQuery.of(context).size.width,
-                    height: 50,
-                    decoration: BoxDecoration(
-                        color: Color(0xffEF3651),
-                        borderRadius: BorderRadius.circular(25)),
-                    child: Center(
-                      child: Text("Send", style: textStyle),
+                  GestureDetector(
+                    onTap: ()async{
+                      if(_formKey.currentState.validate()){
+                        dynamic results=await _authServices.Fpass(email);
+                        if(results==null){
+                          setState(() {
+                            error='Error';
+                          });
+                        }else
+                          Navigator.pushReplacement(context, MaterialPageRoute(
+                              builder: (context)=>LogIn()
+                          ));
+                      }
+                    },
+                    child: Container(
+                      width: MediaQuery.of(context).size.width,
+                      height: 50,
+                      decoration: BoxDecoration(
+                          color: Color(0xffEF3651),
+                          borderRadius: BorderRadius.circular(25)),
+                      child: Center(
+                        child: Text("Send", style: textStyle),
+                      ),
                     ),
                   ),
                   SizedBox(
