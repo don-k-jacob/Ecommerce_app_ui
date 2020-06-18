@@ -42,7 +42,7 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
 
   void _onIntroEnd(context) {
     Navigator.of(context).push(
-      MaterialPageRoute(builder: (_) => LogIn()),
+      MaterialPageRoute(builder: (_) => SignUP()),
     );
   }
 
@@ -60,7 +60,7 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
       titleTextStyle: TextStyle(fontSize: 28.0, fontWeight: FontWeight.w700),
       bodyTextStyle: bodyStyle,
       descriptionPadding: EdgeInsets.fromLTRB(16.0, 0.0, 16.0, 16.0),
-      pageColor: Color(0xFF343434),
+      pageColor: Color(0xff1E1F28),
       imagePadding: EdgeInsets.zero,
     );
 
@@ -104,10 +104,10 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
                     height: 56,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(20),
-                      color: Color(0xff6C63FF),
+                      color: Color(0xffEF3651),
                     ),
                     child: Center(child: Text("Get Strarted",style: TextStyle(
-                        fontSize: 30,color: Colors.white
+                        fontSize: 20,color: Colors.white
                     ),))),
               ),
             ],
@@ -128,7 +128,7 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
       dotsDecorator: const DotsDecorator(
         size: Size(10.0, 10.0),
         color: Color(0xFFE5E5E5),
-        activeColor: Color(0xff6C63FF),
+        activeColor: Color(0xffEF3651),
         activeSize: Size(22.0, 10.0),
         activeShape: RoundedRectangleBorder(
           borderRadius: BorderRadius.all(Radius.circular(25.0)),

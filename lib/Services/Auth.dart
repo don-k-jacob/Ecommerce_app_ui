@@ -41,7 +41,15 @@ class AuthServices {
       return null;
     }
   }
-
+ Future Fpass(String email)async{
+   try{
+    _auth.sendPasswordResetEmail(email: email);
+    return true;
+   }catch(e){
+     print(e.toString());
+     return false;
+   }
+ }
 //Sign out
   Future SignOut()
   async{

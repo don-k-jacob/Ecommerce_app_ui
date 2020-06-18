@@ -61,7 +61,7 @@ class Profile extends StatelessWidget {
               ListTile(txt: "Logout",icon: Icons.exit_to_app,
                 onPressed: () async {
                   await _auth.SignOut();
-                  Navigator.of(context).push(
+                  Navigator.of(context).pushReplacement(
                     MaterialPageRoute(builder: (_) => OnBoardingPage()),
                   );
                 },),
