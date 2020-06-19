@@ -1,3 +1,4 @@
+import 'package:ecommerceappui/screens/Home/Favorites/Favorites.dart';
 import 'package:ecommerceappui/screens/Home/HomeScreen.dart';
 import 'package:ecommerceappui/screens/Home/Profile/Profile.dart';
 import 'package:flutter/material.dart';
@@ -63,11 +64,7 @@ List<Widget> pages=[
     ),
   ),
 
-  Container(
-    child: Center(
-      child: Text("fav"),
-    ),
-  ),
+  Favorites(),
   Profile(),
 
 ];
