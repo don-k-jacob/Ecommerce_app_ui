@@ -2,7 +2,6 @@ import 'package:ecommerceappui/Services/Auth.dart';
 import 'package:ecommerceappui/const.dart';
 import 'package:ecommerceappui/screens/Home/Profile/MyOrders/OrderDetails.dart';
 import 'package:flutter/material.dart';
-String img="https://s3-alpha-sig.figma.com/img/581b/273d/1a360f84cfd9a99708fc889ab7d86e6c?Expires=1592784000&Signature=WM5iwPiBwg5SaEFNqULBhWs1sd3TKun7rMr8vBYw91oPMLVBQoTgKQo8HS~47FLBy~BRX0~nB3PWWUh0PBQ-DRvReC05pPTlM1-0nbfbDvowYENKXzLH7cbYE1T8vugY85xkCRw5cKRkMiSH~PMqwq8zBvnyigJT2FoWflHHVM-Z~7YsQTlCv4T1M2gZC41iwYxk~U1E6LwTXHoMPcTzv3~tTNMzmDYiAgQFn~EGN7bq3almz097nUfDluKTuR5sccgYjIRhqLqBhc43QETcU6QRBtK7OfCYMosglDlPTzoWhK4V7yH2Mm-B3IHXBhLTicoVGdNPEMzgk4sWkCCfwQ__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA";
 
 class Settings extends StatefulWidget {
   @override
@@ -10,7 +9,18 @@ class Settings extends StatefulWidget {
 }
 
 class _SettingsState extends State<Settings> {
+  TextEditingController nameController = TextEditingController();
+  TextEditingController dobController = TextEditingController();
+  TextEditingController passwordController = TextEditingController();
 
+  @override
+  void initState() {
+    // TODO: implement initState
+    nameController.text="Matilda Brown";
+    dobController.text="12/12/1989";
+    passwordController.text="1234567890";
+    super.initState();
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -26,9 +36,13 @@ class _SettingsState extends State<Settings> {
               ),
               Container(
                 child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
-                    Text("Personal Information",style: h2Style,),
+                    Row(
+                      children: <Widget>[
+                        Text("Personal Information",style: h2Style,),
+                        Spacer()
+                      ],
+                    ),
                     SizedBox(
                       height: 12,
                     ),
@@ -39,24 +53,76 @@ class _SettingsState extends State<Settings> {
                           color: Color(0xff2A2C36),
                           borderRadius: BorderRadius.circular(4)
                       ),
-                      child: Padding(
-                        padding: const EdgeInsets.all(20.0),
-                        child: TextField(
-                          controller: ,
-                          decoration: InputDecoration(
-                              border: InputBorder.none,
-                              focusedBorder: InputBorder.none,
-                              enabledBorder: InputBorder.none,
-                              errorBorder: InputBorder.none,
-                              disabledBorder: InputBorder.none,
-                            labelText: 'Name',
-                          ),
+                      child: TextField(
+                        controller: nameController,
+                        decoration: InputDecoration(
+                           border: OutlineInputBorder(),
+                          labelText: 'Name',
+                        ),
+                      ),
+                    ),
+                    SizedBox(
+                      height: 24,
+                    ),
+                    Container(
+                      width: 343,
+                      height: 64,
+                      decoration: BoxDecoration(
+                          color: Color(0xff2A2C36),
+                          borderRadius: BorderRadius.circular(4)
+                      ),
+                      child: TextField(
+                        controller: dobController,
+                        decoration: InputDecoration(
+                          border: OutlineInputBorder(),
+                          labelText: 'Date of Birth',
                         ),
                       ),
                     ),
                   ],
                 ),
-              )
+              ),
+              SizedBox(
+                height: 54,
+              ),
+              Container(
+                child: Column(
+                  children: <Widget>[
+                    Row(
+                      children: <Widget>[
+                        Text("Password",style: h2Style,),
+                        Spacer(),
+                        Text("Change",style: h3Style,)
+                      ],
+                    ),
+                    SizedBox(
+                      height: 12,
+                    ),
+                    Container(
+                      width: 343,
+                      height: 64,
+                      decoration: BoxDecoration(
+                          color: Color(0xff2A2C36),
+                          borderRadius: BorderRadius.circular(4)
+                      ),
+                      child: TextField(
+                        readOnly: true,
+                        obscureText: true,
+
+                        enableInteractiveSelection: false,
+                        controller: passwordController,
+                        decoration: InputDecoration(
+                          border: OutlineInputBorder(),
+                          labelText: 'Password',
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              SizedBox(
+                height: 55,
+              ),
             ],
           ),
         ),
