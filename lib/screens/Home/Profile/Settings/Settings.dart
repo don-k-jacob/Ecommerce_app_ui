@@ -10,6 +10,7 @@ class Settings extends StatefulWidget {
 }
 
 class _SettingsState extends State<Settings> {
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -35,16 +36,22 @@ class _SettingsState extends State<Settings> {
                       width: 343,
                       height: 64,
                       decoration: BoxDecoration(
+                          color: Color(0xff2A2C36),
                           borderRadius: BorderRadius.circular(4)
                       ),
-                      child: Center(
-                          child: TextField(
-                            decoration: InputDecoration(
-                              fillColor: Color(0xff2A2C36),
-                              border: OutlineInputBorder(),
-                              labelText: 'Name',
-                            ),
-                          )
+                      child: Padding(
+                        padding: const EdgeInsets.all(20.0),
+                        child: TextField(
+                          controller: ,
+                          decoration: InputDecoration(
+                              border: InputBorder.none,
+                              focusedBorder: InputBorder.none,
+                              enabledBorder: InputBorder.none,
+                              errorBorder: InputBorder.none,
+                              disabledBorder: InputBorder.none,
+                            labelText: 'Name',
+                          ),
+                        ),
                       ),
                     ),
                   ],
