@@ -21,7 +21,7 @@ class _MyOrdersState extends State<MyOrders> {
           padding: const EdgeInsets.symmetric(horizontal: 14),
           child: Column(
             children: <Widget>[
-              EditAppBar(txt: "My Orders",back: false,),
+              EditAppBar(txt: "My Orders",back: true,),
               SizedBox(
                 height: 24,
               ),
