@@ -7,7 +7,6 @@ class OrderDetails extends StatelessWidget {
   const OrderDetails({Key key, this.status}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Color(0xff1E1F28),
@@ -122,6 +121,9 @@ class OrderDetails extends StatelessWidget {
 
                         ],
                       ),
+                      SizedBox(
+                        height: 24,
+                      ),
                       Row(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: <Widget>[
@@ -131,12 +133,16 @@ class OrderDetails extends StatelessWidget {
                               width: MediaQuery.of(context).size.width/2,
                               child: Row(
                                 children: <Widget>[
-                                  Image.file(),
+                                  Image.asset("assets/images/masterCard.png"),
+                                  SizedBox(width: 15,),
                                   Text("**** **** **** 3947"),
                                 ],
                               ))
 
                         ],
+                      ),
+                      SizedBox(
+                        height: 24,
                       ),
                       Row(
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -145,9 +151,12 @@ class OrderDetails extends StatelessWidget {
                           Spacer(),
                           Container(
                               width: MediaQuery.of(context).size.width/2,
-                              child: Text("3 Newbridge Court ,Chino Hills, CA 91709, United States"))
+                              child: Text("FedEx, 3 days, 15\$"))
 
                         ],
+                      ),
+                      SizedBox(
+                        height: 24,
                       ),
                       Row(
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -156,9 +165,12 @@ class OrderDetails extends StatelessWidget {
                           Spacer(),
                           Container(
                               width: MediaQuery.of(context).size.width/2,
-                              child: Text("3 Newbridge Court ,Chino Hills, CA 91709, United States"))
+                              child: Text("10%, Personal promo code"))
 
                         ],
+                      ),
+                      SizedBox(
+                        height: 24,
                       ),
                       Row(
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -167,12 +179,45 @@ class OrderDetails extends StatelessWidget {
                           Spacer(),
                           Container(
                               width: MediaQuery.of(context).size.width/2,
-                              child: Text("3 Newbridge Court ,Chino Hills, CA 91709, United States"))
-
+                              child: Text("133\$"))
                         ],
                       ),
                     ],
                   ),
+                ),
+                SizedBox(
+                  height: 20,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: <Widget>[
+                    Container(
+                      height: 50,
+                      width: 160,
+                      child: new OutlineButton(
+                          child: new Text("Reorder"),
+                          onPressed: (){
+
+                          },
+                          shape: new RoundedRectangleBorder(borderRadius: new BorderRadius.circular(30.0))
+                      ),
+                    ),
+                    Container(
+                      height: 50,
+                      width: 160,
+                      child: new RaisedButton(
+                          color: Color(0xffEF3651),
+                          child: new Text("Leave feedback"),
+                          onPressed: (){
+
+                          },
+                          shape: new RoundedRectangleBorder(borderRadius: new BorderRadius.circular(30.0))
+                      ),
+                    ),
+                  ],
+                ),
+                SizedBox(
+                  height: 20,
                 )
               ],
             ),
