@@ -95,7 +95,11 @@ class _SettingsState extends State<Settings> {
                       children: <Widget>[
                         Text("Password",style: h2Style,),
                         Spacer(),
-                        Text("Change",style: h3Style,)
+                        GestureDetector(
+                          onTap: (){
+                            _settingModalBottomSheet(context);
+                          },
+                            child: Text("Change",style: h3Style,))
                       ],
                     ),
                     SizedBox(
@@ -219,17 +223,45 @@ class _SettingsState extends State<Settings> {
   }
 }
 
-class ChangePass extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      height: 472,
-      width: MediaQuery.of(context).size.width,
-      decoration: BoxDecoration(
-        color: Color(0xff1E1F28),
-        borderRadius: BorderRadius.only(topLeft: Radius.circular(34),
-        topRight: Radius.circular(34))
-      ),
-    );
-  }
+
+
+
+void _settingModalBottomSheet(context){
+  showModalBottomSheet(
+      backgroundColor: Colors.transparent,
+      context: context,
+      builder: (BuildContext bc){
+        return Container(
+          height: 472,
+          width: MediaQuery.of(context).size.width,
+          decoration: BoxDecoration(
+              color: Color(0xff1E1F28),
+              borderRadius: BorderRadius.only(topLeft: Radius.circular(34),
+                  topRight: Radius.circular(34))
+          ),
+          child: Column(
+            children: <Widget>[
+              SizedBox(
+                height: 14,
+              ),
+              Container(
+                height: 6,
+                width: 60,
+                decoration: BoxDecoration(
+                  color: Color(0xffABB4BD),
+                  borderRadius: BorderRadius.all(Radius.circular(3)),
+                ),
+              ),
+              SizedBox(
+                height: 16,
+              ),
+              Text("Password Change",style: h2Style,),
+              SizedBox(
+                height: 18,
+              ),
+            ],
+          ),
+        );
+      }
+  );
 }
