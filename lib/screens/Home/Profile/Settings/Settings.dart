@@ -12,6 +12,9 @@ class _SettingsState extends State<Settings> {
   TextEditingController nameController = TextEditingController();
   TextEditingController dobController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
+  bool salesIsSwitched = false;
+  bool arrivalsIsSwitched = false;
+  bool statusIsSwitched = false;
 
   @override
   void initState() {
@@ -123,9 +126,109 @@ class _SettingsState extends State<Settings> {
               SizedBox(
                 height: 55,
               ),
+              Container(
+                child: Column(
+                  children: <Widget>[
+                    Row(
+                      children: <Widget>[
+                        Text("Password",style: h2Style,),
+                        Spacer(),
+                      ],
+                    ),
+                    SizedBox(
+                      height: 24,
+                    ),
+                    Row(
+                      children: <Widget>[
+                        Text("Sales",style: h4Style.copyWith(fontWeight: FontWeight.normal)),
+                        Spacer(),
+                        Container(
+                          child: Switch(
+                            value: salesIsSwitched,
+                            onChanged: (value){
+                              setState(() {
+                                salesIsSwitched=value;
+                                print(salesIsSwitched);
+                              });
+                            },
+                            activeTrackColor: Color(0xffABB4BD),
+                            activeColor: Color(0xff55D85A),
+                            inactiveThumbColor: Color(0xffABB4BD),
+                          ),
+                        ),
+
+                      ],
+                    ),
+                    SizedBox(
+                      height: 24,
+                    ),
+                    Row(
+                      children: <Widget>[
+                        Text("New arrivals",style: h4Style.copyWith(fontWeight: FontWeight.normal)),
+                        Spacer(),
+                        Container(
+                          child: Switch(
+                            value: arrivalsIsSwitched,
+                            onChanged: (value){
+                              setState(() {
+                                arrivalsIsSwitched=value;
+                                print(arrivalsIsSwitched);
+                              });
+                            },
+                            activeTrackColor: Color(0xffABB4BD),
+                            activeColor: Color(0xff55D85A),
+                            inactiveThumbColor: Color(0xffABB4BD),
+                          ),
+                        ),
+
+                      ],
+                    ),
+
+                    SizedBox(
+                      height: 24,
+                    ),
+                    Row(
+                      children: <Widget>[
+                        Text("Delivery status changes",style: h4Style.copyWith(fontWeight: FontWeight.normal),),
+                        Spacer(),
+                        Container(
+                          child: Switch(
+                            value: statusIsSwitched,
+                            onChanged: (value){
+                              setState(() {
+                                statusIsSwitched=value;
+                                print(statusIsSwitched);
+                              });
+                            },
+                            activeTrackColor: Color(0xffABB4BD),
+                            activeColor: Color(0xff55D85A),
+                            inactiveThumbColor: Color(0xffABB4BD),
+                          ),
+                        ),
+
+                      ],
+                    ),
+                  ],
+                ),
+              ),
             ],
           ),
         ),
+      ),
+    );
+  }
+}
+
+class ChangePass extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: 472,
+      width: MediaQuery.of(context).size.width,
+      decoration: BoxDecoration(
+        color: Color(0xff1E1F28),
+        borderRadius: BorderRadius.only(topLeft: Radius.circular(34),
+        topRight: Radius.circular(34))
       ),
     );
   }
