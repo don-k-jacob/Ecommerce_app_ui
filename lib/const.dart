@@ -31,8 +31,8 @@ TextStyle h4Style=TextStyle(
 
 class EditAppBar extends StatelessWidget {
   final txt;
-
-  const EditAppBar({Key key, this.txt}) : super(key: key);
+  final bool back;
+  const EditAppBar({Key key, this.txt, this.back}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -41,6 +41,10 @@ class EditAppBar extends StatelessWidget {
         children: <Widget>[
           Row(
             children: <Widget>[
+              if(back)
+              IconButton(icon: Icon(Icons.arrow_back_ios), onPressed: (){
+                Navigator.pop(context);
+              }),
               Spacer(),
               IconButton(icon: Icon(Icons.search), onPressed: (){}),
             ],

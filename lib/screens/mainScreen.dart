@@ -1,5 +1,5 @@
 import 'package:ecommerceappui/screens/Home/HomeScreen.dart';
-import 'package:ecommerceappui/screens/Home/Profile.dart';
+import 'package:ecommerceappui/screens/Home/Profile/Profile.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -62,13 +62,13 @@ List<Widget> pages=[
       child: Text("shop"),
     ),
   ),
-  Profile(),
+
   Container(
     child: Center(
       child: Text("fav"),
     ),
   ),
-
+  Profile(),
 
 ];
 

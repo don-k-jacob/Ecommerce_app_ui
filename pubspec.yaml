@@ -33,7 +33,6 @@ dependencies:
   provider: ^4.0.5
   introduction_screen: ^1.0.7
 
-
 dev_dependencies:
   flutter_test:
     sdk: flutter
