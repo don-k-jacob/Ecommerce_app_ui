@@ -17,6 +17,7 @@ class _SignUPState extends State<SignUP> {
   String pass2='';
   String error='';
 
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -177,15 +178,20 @@ class _SignUPState extends State<SignUP> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
-                    Container(
-                      width: 92,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(24),
-                        color: Colors.white,
+                    GestureDetector(
+                      onTap: (){
+                        _authServices.onGoogleSignIn(context);
+                      },
+                      child: Container(
+                        width: 92,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(24),
+                          color: Colors.white,
+                        ),
+                        height: 64,
+                        child: Image.network("https://image.flaticon.com/teams/slug/google.jpg",
+                          scale: 5,),
                       ),
-                      height: 64,
-                      child: Image.network("https://image.flaticon.com/teams/slug/google.jpg",
-                        scale: 5,),
                     ),
                     SizedBox(
                       width: 16,

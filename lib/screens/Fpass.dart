@@ -22,7 +22,6 @@ class _FpassState extends State<Fpass> {
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 16),
             child: SingleChildScrollView(
-              
               child: Form(
                 key: _formKey,
                 child: Column(
