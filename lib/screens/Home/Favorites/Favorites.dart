@@ -1,5 +1,6 @@
 import 'package:ecommerceappui/const.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/painting.dart';
 
 class Favorites extends StatefulWidget {
   @override
@@ -74,7 +75,96 @@ class _FavoritesState extends State<Favorites> {
                     ),
                   ),
                 ],
-              )
+              ),
+              SizedBox(
+                height: 28,
+              ),
+          ListView.separated(
+            padding: const EdgeInsets.all(8),
+            itemCount: 20,
+            itemBuilder: (BuildContext context, int index) {
+              return Container(
+                 height: 116,
+                 width: 343,
+                 child: Stack(
+                   children: <Widget>[
+                     Container(
+                       width: 343,
+                       height: 104,
+                       decoration: BoxDecoration(
+                         color: Color(0xff2A2C36),
+                         borderRadius: BorderRadius.circular(8),
+                       ),
+                       child: Row(
+                         children: <Widget>[
+                           Container(
+                             height: 104,
+                             width: 104,
+                             decoration: BoxDecoration(
+                               image: DecorationImage(image: NetworkImage("https://s3-alpha-sig.figma.com/img/1770/088f/bba96a73adb59b4213783033221c4b94?Expires=1593388800&Signature=gsOeN99KV5kYg-9HZPJN8RaTpiaXWf6CelWwkx9yJ09DGFORLN3FRsC7NpcxNpYdpzIuLMM~Vu6yRRofOzBX~QRsaRms02~ZGDINmf~803biL0I66js~XKADIVUUNYekCkXDkaYtPPjcCya4zYHj4~IGQOOBpadxq-gkuRE1qBaVakoSsJH9qX~zsubtWKv~kSGCNWf8Qb8A48NvDS9sJpwCFjPPfI3a4zXUJi4z3mHHlFs7SOjq1xOy3tS4wNWAGeobyNirhraJpv1oaNzADwfitmr5nwkOhOiDJ~2E7ddn8dbrk4W1xs-gflweb8htWbnNv5dSdWrIrgDjjsmiUA__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA"),
+                               fit: BoxFit.cover)
+                             ),
+                           ),
+                           SizedBox(
+                             width: 12,
+                           ),
+                           Column(
+                             children: <Widget>[
+                               SizedBox(
+                                 height: 15,
+                               ),
+                               Text("LIME",style: h3Style,),
+                               SizedBox(
+                                 height: 3,
+                               ),
+                               Text("Shirt",style: h2Style,),
+                               SizedBox(
+                                 height: 6,
+                               ),
+                               Row(
+                                 children: <Widget>[
+                                   Text("Color: ",style: h3Style,),
+                                   Text("Blue",style: h4Style.copyWith(fontWeight: FontWeight.normal),),
+                                   SizedBox(
+                                     width: 25,
+                                   ),
+                                   Text("Size: ",style: h3Style,),
+                                   Text("L",style: h4Style.copyWith(fontWeight: FontWeight.normal),),
+                                 ],
+                               ),
+                               SizedBox(
+                                 height: 12,
+                               ),
+                               Row(
+                                 children: <Widget>[
+                                   Text("32\$",style: h2Style,),
+                                   SizedBox(
+                                     width: 54,
+                                   ),
+                                   Container(child: Row(
+                                     children: <Widget>[
+                                       Icon(Icons.star,color: Color(0xffFFBA49),),
+                                       Icon(Icons.star,color: Color(0xffFFBA49),),
+                                       Icon(Icons.star,color: Color(0xffFFBA49),),
+                                       Icon(Icons.star,color: Color(0xffFFBA49),),
+                                       Icon(Icons.star,color: Color(0xffFFBA49),),
+                                       Text("(10)",style: h3Style,),
+                                     ],
+                                   )),
+
+                                 ],
+                               ),
+                             ],
+                           )
+                         ],
+                       ),
+                     )
+                   ],
+                 ),
+              );
+            },
+            separatorBuilder: (BuildContext context, int index) => const Divider(),
+          )
             ],
           ),
         ),
