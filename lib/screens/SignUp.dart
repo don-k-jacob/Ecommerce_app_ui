@@ -168,6 +168,7 @@ class _SignUPState extends State<SignUP> {
                   ),
                 ),
                 SizedBox(
+                  
                   height: 126,
                 ),
                 Text("Or sign up with social account",
@@ -176,7 +177,6 @@ class _SignUPState extends State<SignUP> {
                   height: 24,
                 ),
                 Row(
-
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
                     GestureDetector(
