@@ -176,6 +176,7 @@ class _SignUPState extends State<SignUP> {
                   height: 24,
                 ),
                 Row(
+
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
                     GestureDetector(
