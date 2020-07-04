@@ -168,7 +168,6 @@ class _SignUPState extends State<SignUP> {
                   ),
                 ),
                 SizedBox(
-                  
                   height: 126,
                 ),
                 Text("Or sign up with social account",
